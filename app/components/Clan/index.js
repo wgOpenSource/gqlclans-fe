@@ -4,13 +4,13 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 import {
-    TableRow,
-    TableRowColumn,
-    RaisedButton,
-    TextField,
-    Snackbar,
     List,
     ListItem,
+    RaisedButton,
+    Snackbar,
+    TableRow,
+    TableRowColumn,
+    TextField,
 } from 'material-ui'
 
 export class Clan extends React.Component {
@@ -54,8 +54,8 @@ export class Clan extends React.Component {
                 </TableRowColumn>
                 <TableRowColumn>
                     <List>
-                        {this.props.clan.messages.map(m => (
-                            <ListItem primaryText={m.body}/>
+                        {this.props.clan.messages.map(message => (
+                            <ListItem primaryText={message.body}/>
                         ))}
                     </List>
                 </TableRowColumn>
