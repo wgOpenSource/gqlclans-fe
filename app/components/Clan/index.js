@@ -3,7 +3,15 @@ import PropTypes from 'prop-types'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-import { TableRow, TableRowColumn, RaisedButton, TextField, Snackbar } from 'material-ui'
+import {
+    List,
+    ListItem,
+    RaisedButton,
+    Snackbar,
+    TableRow,
+    TableRowColumn,
+    TextField,
+} from 'material-ui'
 
 export class Clan extends React.Component {
     static propTypes = {
@@ -43,6 +51,13 @@ export class Clan extends React.Component {
                 <TableRowColumn>{this.props.clan.members.length}</TableRowColumn>
                 <TableRowColumn>
                     <div style={{backgroundColor: this.props.clan.color, width: 30, height: 30}} />
+                </TableRowColumn>
+                <TableRowColumn>
+                    <List>
+                        {this.props.clan.messages.map(message => (
+                            <ListItem primaryText={message.body}/>
+                        ))}
+                    </List>
                 </TableRowColumn>
                 <TableRowColumn>
                     <TextField

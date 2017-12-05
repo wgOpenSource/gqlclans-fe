@@ -15,7 +15,7 @@ export default class extends React.Component {
         return (
             <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                 <TableRow >
-                    {['Name', 'Members count', 'Color', ' ', 'Action'].map((header, index) => (
+                    {['Name', 'Members count', 'Color', 'Messages', ' ', 'Action'].map((header, index) => (
                         <TableHeaderColumn colSpan="3" key={`${header}-${index}`}>{header}</TableHeaderColumn>
                     ))}
                 </TableRow>
